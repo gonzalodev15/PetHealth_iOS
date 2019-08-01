@@ -18,6 +18,8 @@ class AppointmentCell: UICollectionViewCell{
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     
+    
+    
     func updateViews(from appointmentResponse: AppointmentResponse){
         nameLabel.text = appointmentResponse.pet.name
         dateLabel.text = appointmentResponse.appointment.appt_date
@@ -69,7 +71,6 @@ class AppointmentViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AppointmentCell
-    
         // Configure the cell
         cell.updateViews(from: appointmentResponses[indexPath.row])
         return cell
@@ -101,19 +102,28 @@ class AppointmentViewController: UICollectionViewController {
         return false
     }
  */
+    /*
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
     }
+   */
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentAppointment = indexPath.row
-        self.performSegue(withIdentifier: "showAppointmentDetail", sender: self)
+        let cell = collectionView.cellForItem(at: indexPath)
+        self.performSegue(withIdentifier: "showAppointmentDetail", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showAppointmentDetail" {
             let eventController = (segue.destination as! UINavigationController).viewControllers.first as! AppointmentDetailViewController
-            eventController.appointmentResponse = appointmentResponses[currentAppointment]
+            
+            let cell = sender as! AppointmentCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            eventController.appointmentResponse = appointmentResponses[(indexPath?.row)!]
         }
         return
     }

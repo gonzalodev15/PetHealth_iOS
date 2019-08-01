@@ -46,7 +46,10 @@ class AppointmentDetailViewController: UIViewController {
     }
     
 
-
+    @IBAction func backAction(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

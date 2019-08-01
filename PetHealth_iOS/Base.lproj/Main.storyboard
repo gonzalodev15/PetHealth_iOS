@@ -287,7 +287,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kkd-8Q-aLp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uiE-RI-om5"/>
+                    <navigationItem key="navigationItem" id="uiE-RI-om5">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="GFI-9i-UAs">
+                            <connections>
+                                <action selector="backAction:" destination="pMq-Tt-RaF" id="8bS-4x-ITg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="appointmentDescriptionLabel" destination="UMz-su-fDg" id="T73-O8-KUB"/>
                         <outlet property="apptDateLabel" destination="aq4-CX-PPX" id="SWn-Vh-Vbi"/>
