@@ -19,4 +19,8 @@ class PetHealthApi {
         return "\(baseUrl)/veterinaries/\(userid)"
     }
     
+    public static var userLogin : String {
+        return "\(baseUrl)/login"
+    }
+    
 }

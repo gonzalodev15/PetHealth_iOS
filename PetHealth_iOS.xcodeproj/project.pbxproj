@@ -29,6 +29,9 @@
 		7665894322F28D9D00A56FB7 /* ClinicHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665894222F28D9D00A56FB7 /* ClinicHistory.swift */; };
 		7665894522F28DB100A56FB7 /* AppointmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665894422F28DB100A56FB7 /* AppointmentResponse.swift */; };
 		7665894722F28E5700A56FB7 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665894622F28E5700A56FB7 /* AppointmentViewController.swift */; };
+		76BF564622F2D6F300542A0E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF564522F2D6F300542A0E /* ProfileViewController.swift */; };
+		76BF566222F2DAE700542A0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF566122F2DAE700542A0E /* User.swift */; };
+		76BF566422F2DE7000542A0E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF566322F2DE7000542A0E /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +268,9 @@
 		7665894222F28D9D00A56FB7 /* ClinicHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicHistory.swift; sourceTree = "<group>"; };
 		7665894422F28DB100A56FB7 /* AppointmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentResponse.swift; sourceTree = "<group>"; };
 		7665894622F28E5700A56FB7 /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
+		76BF564522F2D6F300542A0E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		76BF566122F2DAE700542A0E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		76BF566322F2DE7000542A0E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +418,8 @@
 				7665894022F28D9100A56FB7 /* Appointment.swift */,
 				7665894222F28D9D00A56FB7 /* ClinicHistory.swift */,
 				7665894422F28DB100A56FB7 /* AppointmentResponse.swift */,
+				76BF566122F2DAE700542A0E /* User.swift */,
+				76BF566322F2DE7000542A0E /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +429,7 @@
 			children = (
 				7665894622F28E5700A56FB7 /* AppointmentViewController.swift */,
 				76075BE422F2B34200D5636E /* AppointmentDetailViewController.swift */,
+				76BF564522F2D6F300542A0E /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -739,12 +748,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BF566222F2DAE700542A0E /* User.swift in Sources */,
 				7665890A22F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld in Sources */,
 				7665893F22F28D7A00A56FB7 /* Veterinarian.swift in Sources */,
 				76075BE522F2B34200D5636E /* AppointmentDetailViewController.swift in Sources */,
 				7665894322F28D9D00A56FB7 /* ClinicHistory.swift in Sources */,
 				7665893B22F28D5800A56FB7 /* Pet.swift in Sources */,
+				76BF566422F2DE7000542A0E /* LoginResponse.swift in Sources */,
 				7665893D22F28D7000A56FB7 /* Veterinary.swift in Sources */,
+				76BF564622F2D6F300542A0E /* ProfileViewController.swift in Sources */,
 				7665893622F27A8A00A56FB7 /* PetHealthApi.swift in Sources */,
 				7665894522F28DB100A56FB7 /* AppointmentResponse.swift in Sources */,
 				7665894122F28D9100A56FB7 /* Appointment.swift in Sources */,
