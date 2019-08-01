@@ -100,11 +100,24 @@ class AppointmentViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return false
     }
-
+ */
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
     }
-    */
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentAppointment = indexPath.row
+        self.performSegue(withIdentifier: "showAppointmentDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAppointmentDetail" {
+            let eventController = (segue.destination as! UINavigationController).viewControllers.first as! AppointmentDetailViewController
+            eventController.appointmentResponse = appointmentResponses[currentAppointment]
+        }
+        return
+    }
+ 
     func updateData(){
         let headers: HTTPHeaders = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjcsImlhdCI6MTU2NDI4MTM2NX0.dULXZalKh5B8NRGsscdPv2oB9WScczzOTaAX-KaNMXY"]
         Alamofire.AF.request(PetHealthApi.appointmentsUrl(userid: 27), headers: headers).validate()

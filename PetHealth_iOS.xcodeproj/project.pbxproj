@@ -13,6 +13,7 @@
 		76075BC222F291CE00D5636E /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76075B9922F291BF00D5636E /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76075BC522F291D300D5636E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76075BB422F291C800D5636E /* SwiftyJSON.framework */; };
 		76075BC622F291D300D5636E /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76075BB422F291C800D5636E /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76075BE522F2B34200D5636E /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76075BE422F2B34200D5636E /* AppointmentDetailViewController.swift */; };
 		7665890222F27A3D00A56FB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665890122F27A3D00A56FB7 /* AppDelegate.swift */; };
 		7665890722F27A3D00A56FB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7665890522F27A3D00A56FB7 /* Main.storyboard */; };
 		7665890A22F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7665890822F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld */; };
@@ -242,6 +243,7 @@
 		76075B6D22F291A200D5636E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		76075B8C22F291BE00D5636E /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = "AlamofireImage-master/AlamofireImage.xcodeproj"; sourceTree = "<group>"; };
 		76075BA822F291C800D5636E /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		76075BE422F2B34200D5636E /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		766588FE22F27A3D00A56FB7 /* PetHealth_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetHealth_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7665890122F27A3D00A56FB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7665890622F27A3D00A56FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				7665894622F28E5700A56FB7 /* AppointmentViewController.swift */,
+				76075BE422F2B34200D5636E /* AppointmentDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 			files = (
 				7665890A22F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld in Sources */,
 				7665893F22F28D7A00A56FB7 /* Veterinarian.swift in Sources */,
+				76075BE522F2B34200D5636E /* AppointmentDetailViewController.swift in Sources */,
 				7665894322F28D9D00A56FB7 /* ClinicHistory.swift in Sources */,
 				7665893B22F28D5800A56FB7 /* Pet.swift in Sources */,
 				7665893D22F28D7000A56FB7 /* Veterinary.swift in Sources */,
