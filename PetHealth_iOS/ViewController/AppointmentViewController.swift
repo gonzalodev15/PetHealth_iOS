@@ -30,8 +30,13 @@ class AppointmentCell: UICollectionViewCell{
 }
 class AppointmentViewController: UICollectionViewController {
 
+    
     var appointmentResponses: [AppointmentResponse] = []
     var currentAppointment: Int = 0
+    
+    struct GlobalVariable{
+        static var loginResponse : LoginResponse?
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,8 +134,8 @@ class AppointmentViewController: UICollectionViewController {
     }
  
     func updateData(){
-        let headers: HTTPHeaders = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjcsImlhdCI6MTU2NDI4MTM2NX0.dULXZalKh5B8NRGsscdPv2oB9WScczzOTaAX-KaNMXY"]
-        Alamofire.AF.request(PetHealthApi.appointmentsUrl(userid: 27), headers: headers).validate()
+        let headers: HTTPHeaders = ["access_token" : GlobalVariable.loginResponse!.accessToken]
+        Alamofire.AF.request(PetHealthApi.appointmentsUrl(userid: GlobalVariable.loginResponse!.user.id), headers: headers).validate()
             .responseJSON(completionHandler: { response in
                 switch response.result{
                 case .success(let value):

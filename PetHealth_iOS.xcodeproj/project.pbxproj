@@ -32,6 +32,8 @@
 		76BF564622F2D6F300542A0E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF564522F2D6F300542A0E /* ProfileViewController.swift */; };
 		76BF566222F2DAE700542A0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF566122F2DAE700542A0E /* User.swift */; };
 		76BF566422F2DE7000542A0E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF566322F2DE7000542A0E /* LoginResponse.swift */; };
+		76BF566E22F4A84F00542A0E /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BF566D22F4A84F00542A0E /* Content.storyboard */; };
+		76BF567022F4AAC100542A0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF566F22F4AAC100542A0E /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +273,8 @@
 		76BF564522F2D6F300542A0E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76BF566122F2DAE700542A0E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		76BF566322F2DE7000542A0E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		76BF566D22F4A84F00542A0E /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		76BF566F22F4AAC100542A0E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,8 +387,9 @@
 				7665893222F27A5900A56FB7 /* Model */,
 				7665890122F27A3D00A56FB7 /* AppDelegate.swift */,
 				7665890522F27A3D00A56FB7 /* Main.storyboard */,
-				7665890B22F27A3E00A56FB7 /* Assets.xcassets */,
+				76BF566D22F4A84F00542A0E /* Content.storyboard */,
 				7665890D22F27A3E00A56FB7 /* LaunchScreen.storyboard */,
+				7665890B22F27A3E00A56FB7 /* Assets.xcassets */,
 				7665891022F27A3E00A56FB7 /* Info.plist */,
 				7665890822F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld */,
 			);
@@ -430,6 +435,7 @@
 				7665894622F28E5700A56FB7 /* AppointmentViewController.swift */,
 				76075BE422F2B34200D5636E /* AppointmentDetailViewController.swift */,
 				76BF564522F2D6F300542A0E /* ProfileViewController.swift */,
+				76BF566F22F4AAC100542A0E /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -721,6 +727,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BF566E22F4A84F00542A0E /* Content.storyboard in Resources */,
 				7665890F22F27A3E00A56FB7 /* LaunchScreen.storyboard in Resources */,
 				7665890C22F27A3E00A56FB7 /* Assets.xcassets in Resources */,
 				7665890722F27A3D00A56FB7 /* Main.storyboard in Resources */,
@@ -751,6 +758,7 @@
 				76BF566222F2DAE700542A0E /* User.swift in Sources */,
 				7665890A22F27A3D00A56FB7 /* PetHealth_iOS.xcdatamodeld in Sources */,
 				7665893F22F28D7A00A56FB7 /* Veterinarian.swift in Sources */,
+				76BF567022F4AAC100542A0E /* LoginViewController.swift in Sources */,
 				76075BE522F2B34200D5636E /* AppointmentDetailViewController.swift in Sources */,
 				7665894322F28D9D00A56FB7 /* ClinicHistory.swift in Sources */,
 				7665893B22F28D5800A56FB7 /* Pet.swift in Sources */,
