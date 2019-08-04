@@ -23,6 +23,7 @@ class AppointmentDetailViewController: UIViewController {
     var appointmentResponse: AppointmentResponse? {
         didSet{
             print("set: \(appointmentResponse!.appointment.id)")
+            print("set: \(appointmentResponse!.veterinarian.name)")
         }
     }
     override func viewDidLoad() {

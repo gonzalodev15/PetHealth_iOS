@@ -10,21 +10,18 @@ import Foundation
 import SwiftyJSON
 
 class Veterinarian{
-    var id: Int
+
     var name: String
     
-    init(id: Int, name: String){
-        self.id = id
+    init(name: String){
         self.name = name
     }
     
     convenience init() {
-        self.init(id: 0,
-                  name: "")
+        self.init(name: "")
     }
     convenience init(jsonVeterinarian: JSON) {
         self.init(
-            id: jsonVeterinarian["id"].intValue,
             name: jsonVeterinarian["name"].stringValue
         )
     }

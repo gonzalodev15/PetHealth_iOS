@@ -11,13 +11,17 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
+let repository : PetHealthRepository! = PetHealthRepository()
+var veterinary : Veterinary!
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextBox: UITextField!
     @IBOutlet weak var passwordTextBox: UITextField!
     
-    var loginResponse: LoginResponse?
     
+    var loginResponse : LoginResponse!
+
     @IBAction func loginAction(_ sender: UIButton) {
         authenticateUser()
         run(after: 2){
@@ -39,11 +43,6 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showContent"{
-            AppointmentViewController.GlobalVariable.loginResponse = self.loginResponse
-           
-        }
-        return
     }
     
     func executeSegue(){
@@ -53,6 +52,7 @@ class LoginViewController: UIViewController {
     func authenticateUser(){
         print(usernameTextBox.text!)
         print(passwordTextBox.text!)
+        
         let parameters = ["username" :  "\(usernameTextBox.text!)", "password" : "\(passwordTextBox.text!)"]
         Alamofire.AF.request(PetHealthApi.userLogin, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON(completionHandler: { response in
             switch response.result {
@@ -60,13 +60,18 @@ class LoginViewController: UIViewController {
                 let json = JSON(value)
                 print(json)
                 self.loginResponse = LoginResponse.init(jsonLoginResponse: json["data"])
-                print(self.loginResponse!.accessToken)
+                repository.accessTokenAuthentication = self.loginResponse.accessToken
+                repository.userId = self.loginResponse.user.id
+                repository.userPhoto = self.loginResponse.user.photo
+                veterinary = self.loginResponse.veterinary
                 
             case .failure(let error):
                 print("Response Error: \(error.localizedDescription)")
             }
         })
     }
+    
+    
 
     /*
     // MARK: - Navigation

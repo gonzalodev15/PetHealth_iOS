@@ -28,15 +28,12 @@ class AppointmentCell: UICollectionViewCell{
         }
     }
 }
+
 class AppointmentViewController: UICollectionViewController {
 
-    
+   
     var appointmentResponses: [AppointmentResponse] = []
     var currentAppointment: Int = 0
-    
-    struct GlobalVariable{
-        static var loginResponse : LoginResponse?
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +45,9 @@ class AppointmentViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         updateData()
     }
 
@@ -134,8 +134,10 @@ class AppointmentViewController: UICollectionViewController {
     }
  
     func updateData(){
-        let headers: HTTPHeaders = ["access_token" : GlobalVariable.loginResponse!.accessToken]
-        Alamofire.AF.request(PetHealthApi.appointmentsUrl(userid: GlobalVariable.loginResponse!.user.id), headers: headers).validate()
+        print(repository.accessTokenAuthentication!)
+        let headers: HTTPHeaders = ["access_token" : repository.accessTokenAuthentication! ]
+        
+        Alamofire.AF.request(PetHealthApi.appointmentsUrl(userid: repository.userId!), headers: headers).validate()
             .responseJSON(completionHandler: { response in
                 switch response.result{
                 case .success(let value):
