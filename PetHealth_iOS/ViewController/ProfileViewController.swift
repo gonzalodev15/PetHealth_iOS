@@ -27,18 +27,22 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateData()
+        setInformation()
         
     }
     
-    func updateData(){
+    func setInformation(){
         nameLabel.text = veterinary.name
-        phoneLabel.text = veterinary.phone
+        phoneLabel.text = repository.userMail!
         addressLabel.text = veterinary.location
         scheduleLabel.text = veterinary.opening_hours
         if let url = URL(string: repository.userPhoto!){
             pictureImageView.af_setImage(withURL: url)
         }
     }
+    
+    @IBAction func updateProfile(_ sender: UIButton) {
+    }
+    
 }
 

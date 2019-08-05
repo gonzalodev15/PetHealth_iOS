@@ -63,6 +63,7 @@ class LoginViewController: UIViewController {
                 repository.accessTokenAuthentication = self.loginResponse.accessToken
                 repository.userId = self.loginResponse.user.id
                 repository.userPhoto = self.loginResponse.user.photo
+                repository.userMail = self.loginResponse.user.mail
                 veterinary = self.loginResponse.veterinary
                 
             case .failure(let error):

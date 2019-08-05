@@ -49,6 +49,7 @@ class AppointmentViewController: UICollectionViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         updateData()
+        
     }
 
     /*
@@ -121,6 +122,7 @@ class AppointmentViewController: UICollectionViewController {
         self.performSegue(withIdentifier: "showAppointmentDetail", sender: cell)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showAppointmentDetail" {
@@ -148,7 +150,6 @@ class AppointmentViewController: UICollectionViewController {
                 case .failure(let error):
                     print("Response Error: \(error.localizedDescription)")
                 }
-                
             })
     }
 

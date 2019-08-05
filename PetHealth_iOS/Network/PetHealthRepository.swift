@@ -37,6 +37,19 @@ class PetHealthRepository{
         }
     }
     
+    var userMail: String? {
+        get{
+            return settings.string(forKey: "savedUserMail")!
+        }
+        set{
+            if let userPhoto = newValue as String? {
+                settings.set(userPhoto, forKey: "savedUserMail")
+                return
+            }
+            //settings.removeObject(forKey: "savedUserMail")
+        }
+    }
+    
     var accessTokenAuthentication: String? {
         get{
             return settings.string(forKey: "savedAccessToken")!
