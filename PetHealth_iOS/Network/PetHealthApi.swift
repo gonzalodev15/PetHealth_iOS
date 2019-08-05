@@ -23,4 +23,8 @@ class PetHealthApi {
         return "\(baseUrl)/login"
     }
     
+    public static func finishAppointmentUrl(appointmentId: Int)-> String {
+        return "\(baseUrl)/appointments/\(appointmentId)/history"
+    }
+    
 }

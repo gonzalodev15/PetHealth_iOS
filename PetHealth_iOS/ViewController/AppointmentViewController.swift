@@ -146,8 +146,6 @@ class AppointmentViewController: UICollectionViewController {
                     self.appointmentResponses = AppointmentResponse.buildAll(from: json["data"].arrayValue)
                     self.collectionView!.reloadData()
                 case .failure(let error):
-                    print("Asu, falló :'v")
-                    print("Request: \(String(describing: response.request))") 
                     print("Response Error: \(error.localizedDescription)")
                 }
                 

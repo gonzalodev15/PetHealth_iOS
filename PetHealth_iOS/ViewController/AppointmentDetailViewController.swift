@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class AppointmentDetailViewController: UIViewController {
     
@@ -51,6 +53,63 @@ class AppointmentDetailViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func showAlertController(_ sender: Any) {
+        var motiveTextField: UITextField?
+        var diagnoseTextField: UITextField?
+        
+        // 2.
+        let alertController = UIAlertController(
+            title: "Finish Appointment",
+            message: "Enter the motive and diagnose",
+            preferredStyle: .alert)
+        
+        // 3.
+        let acceptAction = UIAlertAction(
+        title: "Accept", style: .default) {
+            (action) -> Void in
+            
+            if let motive = motiveTextField?.text {
+                print("Motive = \(motive)")
+            } else {
+                print("No motive entered")
+            }
+            
+            if let diagnose = diagnoseTextField?.text {
+                print("Diagnose = \(diagnose)")
+            } else {
+                print("No diagnose entered")
+            }
+            self.finishAppointment(motive: motiveTextField!.text!, diagnose: diagnoseTextField!.text!)
+            alertController.dismiss(animated: true)
+            self.dismiss(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(
+        title: "Cancel", style: .default) {
+            (action) -> Void in
+            alertController.dismiss(animated: true)
+            
+        }
+        
+        // 4.
+        alertController.addTextField {
+            (txtMotive) -> Void in
+            motiveTextField = txtMotive
+            motiveTextField!.placeholder = "Motive"
+        }
+        
+        alertController.addTextField {
+            (txtDiagnose) -> Void in
+            diagnoseTextField = txtDiagnose
+            diagnoseTextField!.placeholder = "Diagnose"
+        }
+        
+        // 5.
+        alertController.addAction(acceptAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+
+    }
     /*
     // MARK: - Navigation
 
@@ -60,5 +119,24 @@ class AppointmentDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func finishAppointment(motive: String, diagnose: String){
+        let parameters = [ "motive" : motive , "diagnosis" : diagnose ]
+        let headers: HTTPHeaders = ["access_token" : repository.accessTokenAuthentication! ]
+        
+        Alamofire.AF.request(PetHealthApi.finishAppointmentUrl(appointmentId: appointmentResponse!.appointment.id), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate().responseJSON(completionHandler: { response in
+                switch response.result{
+                case .success(let value):
+                    print(value)
+                    print("Appointment Finished!")
+                    
+                case .failure(let error):
+                    print("Response Error: \(error.localizedDescription)")
+                
+                }
+            
+        })
+    }
 
 }
