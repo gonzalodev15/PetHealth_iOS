@@ -41,8 +41,5 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func updateProfile(_ sender: UIButton) {
-    }
-    
 }
 

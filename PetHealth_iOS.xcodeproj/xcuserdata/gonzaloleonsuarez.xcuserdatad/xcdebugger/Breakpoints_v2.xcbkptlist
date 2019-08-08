@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PetHealth_iOS/ViewController/LoginViewController.swift"
-            timestampString = "586668101.243977"
+            timestampString = "586669707.300589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "authenticateUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PetHealth_iOS/ViewController/AppointmentDetailViewController.swift"
+            timestampString = "586944294.888332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "showAlertController(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -27,4 +27,8 @@ class PetHealthApi {
         return "\(baseUrl)/appointments/\(appointmentId)/history"
     }
     
+    public static func updateProfile(userId: Int) -> String {
+        return "\(baseUrl)/veterinaries/\(userId)"
+    }
+    
 }
